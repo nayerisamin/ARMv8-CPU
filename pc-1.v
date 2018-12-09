@@ -2,7 +2,7 @@ module pc(input clk,
     input reset,
     input write,
     input newpc,
-    output oldpc)
+    output reg oldpc)
 
 
 
@@ -14,7 +14,7 @@ always@(posedge clk)
             end
         else if(write)
             begin
-                oldpc <= newpc + write;
+                oldpc <= newpc;
             end             
     end
 endmodule

@@ -15,12 +15,7 @@ always@(posedge clk)
    		end
 	end
 end
-always@(address)
-	begin 
-		if(readMem==1)
-			dataOutput <= memory[address]
-		end
-	end
 
-end
+	assign dataOutput = ()? memory[address]:;
+
 endmodule
