@@ -12,7 +12,7 @@ always@(posedge clk)
             begin
                 newpc <= 0;
             end
-        else
+        else if(write)
             begin
                 oldpc <= newpc + write;
             end             
