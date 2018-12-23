@@ -8,14 +8,13 @@ module InstructionMemory(
   
   
   initial
-
-
-		begin
-			  Memory[0]    = 32'h8b1f03e5;
-				Memory[1]    = 32'hf84000a4;
-				Memory[2]    = 32'h8b040086;
-        Memory[3]    = 32'hf80010a6;
-				end
+	  #delay_t
+	begin
+		Memory[0]    = 32'h8b1f03e5;
+		Memory[1]    = 32'hf84000a4;
+		Memory[2]    = 32'h8b040086;
+       	 	Memory[3]    = 32'hf80010a6;
+	end
          
 	 
 end
