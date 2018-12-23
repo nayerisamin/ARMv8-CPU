@@ -16,7 +16,5 @@ module InstructionMemory(
        	 	Memory[3]    = 32'hf80010a6;
 	end
          
-	 
-end
-
+	assign instruction <= (Readins)?memory[pc];
 endmodule 
