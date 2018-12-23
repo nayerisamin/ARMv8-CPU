@@ -21,7 +21,7 @@ module Control(
    
    always @(op)
     casex(op)
-      // CBZ
+      
       11'b10110100xxx: ControlOut = 8'b0101000x; // CBZ
       
       11'b11111000010: ControlOut = 8'b00101011; // LDUR
