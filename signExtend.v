@@ -5,9 +5,9 @@ output reg [63:0] out_ins
   
   reg sign_E;
   
-  always @(Instruction[30]) begin 
+  always @(Instruction) begin 
     
-    case(Instruction[])
+    case(Instruction)
       
       
       end 
