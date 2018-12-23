@@ -2,7 +2,7 @@ module pc(input clk,
     input reset,
     input write,
     input newpc,
-    output reg oldpc)
+          output reg oldpc);
     parameter delay_t=5;
 
 
@@ -11,7 +11,7 @@ always@(posedge clk)
         if(reset)
             #delay_t
             begin
-                newpc <= 0;
+                oldpc <= 0;
             end
         else if(write)
             #delay_t
