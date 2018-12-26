@@ -3,7 +3,7 @@ module DataMemory(input [63:0]address,
 	input clk,
 	input writeMem,
 	input readMem,
-	output dataOutput)
+        output dataOutput);
 
 reg [63:0] memory[0:255];
 
