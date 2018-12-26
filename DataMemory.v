@@ -11,8 +11,10 @@ always@(posedge clk)
 	always@(address) 
 	begin
    		if (writeMem == 1)
+		begin
         		memory[address] <= dataInput;
    		end
+	end
 	end
 end
 
