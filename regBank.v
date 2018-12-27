@@ -15,6 +15,7 @@ assign #delay_t readData1 = ()?registers[readReg1]:;
 assign #delay_t readData2 = ()?registers[readReg2]:;
 
 always @(posedge clk)
+	        #delay_t;
 		begin
 			if(regWrite == 1)
 			begin 
