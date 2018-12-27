@@ -1,27 +1,24 @@
 module RegBank(
-input [0:4]readReg1, 
-input [0:4]readReg2,
-input [0:4]writeReg,
-input [0:63]writeData,
+input [5:0]readReg1, 
+input [5:0]readReg2,
+input [5:0]writeReg,
+input [63:0]writeData,
 input regWrite,
 input clk,
-output reg [0:63]readData1,
-output reg [0:63]readData2)
+output [63:0]readData1,
+output [63:0]readData2);
 
 parameter delay_t = 5;
 reg [63:0] registers [0:31];
 
-assign #delay_t readData1 = ()?registers[readReg1]:;
-assign #delay_t readData2 = ()?registers[readReg2]:;
+assign readData1 = registers[readReg1];
+assign readData2 = registers[readReg2];
 
-always @(posedge clk)
-	        #delay_t;
-		begin
-			if(regWrite == 1)
-			begin 
-				registers[writeReg] <= writeData;
-
-			end	
+always @(posedge clk) begin
+		#delay_t;
+		
+			if(regWrite)
+				registers[writeReg] = writeData;
 	 
-end 
+		end 
 endmodule
