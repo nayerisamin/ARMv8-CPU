@@ -5,24 +5,24 @@ output reg [63:0] out_ins);
   
   always @(Instruction) begin 
     
-     if (extend[31:26] == 6'b000101) //B-type
+     if (Instruction[31:26] == 6'b000101) //B-type
 	begin
       
-        extended[25:0] = extend[25:0];
-        extended[63:26] = {38{extended[25]}};
+        out_ins[25:0] = Instruction[25:0];
+        out_ins[63:26] = {38{out_ins[25]}};
       
     end 
-	else if (extend[31:24] == 8'b10110100)//CBZ-type 
+	else if (Instruction[31:24] == 8'b10110100)//CBZ-type 
 	begin 
 
-        extended[19:0] = extend[23:5];
-        extended[63:20] = {44{extended[19]}};
+        out_ins[19:0] = Instruction[23:5];
+        out_ins[63:20] = {44{out_ins[19]}};
         
     end 
 	else
 	begin 
-        extended[9:0] = extend[20:12];
-        extended[63:10] = {54{extended[9]}}; //D-type 
+        out_ins[9:0] = Instruction[20:12];
+        out_ins[63:10] = {54{out_ins[9]}}; //D-type 
 end
   end
   
