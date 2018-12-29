@@ -10,12 +10,7 @@ module Control(
   output MemtoReg
   ); 
   
-  reg [8:0] ControlOutput;
-
-  wire [2:0] opcode = 
-  {op[6], op[4], op[1]};
-
-  
+  reg [8:0] ControlOutput;  
 
   assign 
   {ALUOp[1],ALUOp[0], ALUSrc, 
@@ -23,8 +18,8 @@ module Control(
    RegWrite, MemtoReg}
    = ControlOutput;
    
-   always @(opcode)
-    casex(opcode)
+   always @(op)
+    casex(op)
 
       11'b10110100xxx: ControlOutput = 9'b0101000x; // CBZ
       
