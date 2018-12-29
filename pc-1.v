@@ -1,8 +1,8 @@
 module pc(input clk,
     input reset,
     input write,
-    input newpc,
-          output reg oldpc);
+    input [63:0]newpc,
+    output reg[63:0] oldpc);
     parameter delay_t=5;
 
 
@@ -16,7 +16,7 @@ always@(posedge clk)
         else if(write)
             #delay_t
             begin
-                oldpc <= newpc;
-            end             
-    end
-endmodule
+                oldpc = newpc;
+            end  
+     end           
+    endmodule
