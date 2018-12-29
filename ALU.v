@@ -18,8 +18,7 @@ output reg [63:0]Y); //ALU Output
 	       	  4'b1100:
 				Y = ~(A | B);
           	  4'b0111:
-				Y =B; 
-     	 // default: ALU_Result = 0; 
+				Y =B;  
 	endcase
       if(Y==64'b0)    
         begin
