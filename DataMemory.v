@@ -1,5 +1,5 @@
 module DataMemory(input [63:0]address,
-	input dataInput,
+        input [63:0]dataInput,
 	input clk,
 	input writeMem,
 	input readMem,
