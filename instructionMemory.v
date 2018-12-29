@@ -1,7 +1,7 @@
 module InstructionMemory( 
-  input [31:0] pc,
-  input reg ReadAddr,
-  output reg [31:0] Instruction );
+ // input [31:0] pc,
+  input  [63:0]ReadAddr,
+  output [31:0] Instruction );
 
   parameter delay_t = 5;
 
@@ -16,6 +16,6 @@ module InstructionMemory(
        	 	Memory[3]    = 32'hf80010a6;
 	end
 
-       assign Instruction = (ReadAddr)?Memory[pc];
+       assign Instruction = Memory[ReadAddr[31:2]];
 	 
 endmodule 
