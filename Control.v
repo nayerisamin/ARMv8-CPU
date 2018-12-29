@@ -26,11 +26,11 @@ module Control(
    always @(opcode)
     casex(opcode)
 
-      11'b10110100xxx: ControlOutput = 8'b0101000x; // CBZ
+      11'b10110100xxx: ControlOutput = 8'b01010000; // CBZ
       
       11'b11111000010: ControlOutput = 8'b00101011; // LDUR
       
-      11'b11111000000: ControlOutput = 8'b0010010x; // STUR
+      11'b11111000000: ControlOutput = 8'b00100100; // STUR
       
       11'b10001011000: ControlOutput = 8'b10000010; // R-Format
  
